@@ -1,0 +1,28 @@
+<%- include("partials/header.ejs") %>
+
+
+    <h1 class="text-owen"> <%= result[0].movie%></h1>
+
+<div style="display: flex; justify-content: center; align-items: center;">
+    
+    <% if(locals.result){%>
+        <video width="400" height="200" autoplay>
+            <source src="<%= result[0].video["1080p"] %>" type="video/mp4">
+            <source src="movie.ogg" type="video/ogg">
+            Your browser does not support the video tag.
+        </video>
+       
+    <%}%>
+</div>
+<div style="text-align: center; "></div>
+    <h3 class="text-owen">EXTRA <span>WOW</span> information </h3> 
+    <p class="text-owen"> Year: <%= result[0].year %></p>
+    <p class="text-owen"> Release date: <%= result[0].release_date %></p>
+    <p class="text-owen"> Director: <%= result[0].director %></p>
+    <p class="text-owen"> Owen's Character: <%= result[0].character %></p>
+    <p class="text-owen"> Movie Duration: <%= result[0].movie_duration %></p>
+    <p class="text-owen"> Full line: <%= result[0].full_line %></p>
+    <p class="text-owen"> Current WOW in movie: <%= result[0].current_wow_in_movie %></p>
+    <p class="text-owen"> Total WOWS in movie: <%= result[0].total_wows_in_movie %></p>
+</div>
+<%- include("partials/footer.ejs") %>

@@ -1,0 +1,12 @@
+<%- include("partials/header.ejs") %>
+
+<h1  class="text-owen">All names of movies in which Owen Wilson says "wow."</h1>
+
+<% for(var i = 0; i < result.length; i++){%>
+   <p class="text-owen"><%= result[i]%></p>
+<%}%>
+
+
+
+
+<%- include("partials/footer.ejs") %>

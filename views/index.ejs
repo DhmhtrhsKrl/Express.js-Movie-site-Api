@@ -1,0 +1,117 @@
+<%- include("partials/header.ejs") %>
+
+  <!-- Good offers -->
+  <div class="w3-container w3-margin-top">
+    <h3>Owen Wilson Movies</h3>
+    <h6>That he says <strong>WOW</strong></h6>
+  </div>
+  <% if(locals.result){ %>
+   <h1><%= result["movie"] %> </h1> 
+  <div class="w3-row-padding w3-text-white w3-large">
+    <div class="w3-half w3-margin-bottom">
+      <div class="w3-display-container">
+        <img src="<%= result[0].poster%>" alt="Cinque Terre" style="width:100%">
+        <span class="w3-display-bottomleft w3-padding"><%=result[0].movie%></span>
+      </div>
+    </div>
+    
+
+    <div class="w3-half">
+      <div class="w3-row-padding" style="margin:0 -16px">
+        <div class="w3-half w3-margin-bottom">
+          <div class="w3-display-container">
+            <img src="<%= result[1].poster%>" alt="New York" style="width:100%">
+            <span class="w3-display-bottomleft w3-padding"><%=result[1].movie%></span>
+          </div>
+        </div>
+
+
+        <div class="w3-half w3-margin-bottom">
+          <div class="w3-display-container">
+            <img src="<%= result[2].poster%>" alt="San Francisco" style="width:100%">
+            <span class="w3-display-bottomleft w3-padding"><%=result[2].movie%></span>
+          </div>
+        </div>
+      </div>
+      <div class="w3-row-padding" style="margin:0 -16px">
+        <div class="w3-half w3-margin-bottom">
+          <div class="w3-display-container">
+            <img src="<%= result[3].poster%>" alt="Pisa" style="width:100%">
+            <span class="w3-display-bottomleft w3-padding"><%=result[3].movie%></span>
+          </div>
+        </div>
+        <div class="w3-half w3-margin-bottom">
+          <div class="w3-display-container">
+            <img src="<%= result[4].poster%>" alt="Paris" style="width:100%">
+            <span class="w3-display-bottomleft w3-padding"><%=result[4].movie%></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% }%>
+
+  <div class="w3-container">
+    <h3>Explore more</h3>
+    <!-- <p>Travel with us and see nature at its finest.</p> -->
+  </div>
+  <div class="w3-row-padding">
+    <div class="w3-half w3-margin-bottom">
+      <!-- <img src="/w3images/ocean2.jpg" alt="Norway" style="width:100%"> -->
+      <div class="w3-container w3-white">
+        <h3>All directors of movies in which Owen Wilson says "wow."</h3>
+        <!-- <p class="w3-opacity">Roundtrip from $79</p>
+        <p>Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p> -->
+        <!-- <button class="w3-button w3-margin-bottom">Buy Tickets</button> -->
+        <a class="nav-link w3-button w3-margin-bottom lin-wow" href="/directors">Check the Directors here</a>
+      </div>
+    </div>
+    <div class="w3-half w3-margin-bottom">
+      <!-- <img src="/w3images/mountains2.jpg" alt="Austria" style="width:100%"> -->
+      <div class="w3-container w3-white">
+        <h3>All names of movies in which Owen Wilson says "wow."</h3>
+        <!-- <p class="w3-opacity">One-way from $39</p> -->
+        <!-- <p>Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p> -->
+        <!-- <button class="w3-button w3-margin-bottom">Buy Tickets</button> -->
+        <a class="nav-link w3-button w3-margin-bottom lin-wow" href="/movies">Check the Movies here</a>
+      </div>
+    </div>
+  </div>
+
+<div class="w3-content" style="max-width:1100px;">
+  <!-- search -->
+  <div class="w3-container">
+    <div class="w3-panel w3-padding-16 w3-black w3-opacity w3-card w3-hover-opacity-off">
+      <h2>Search for your favorite Owen Wilson movie!</h2>
+      <!-- <p>search for a movie</p> -->
+      <label>Search a Movie to get a random WOW</label>
+      <form id="myForm" method="post">
+        <label for="spemovie">From this movie</label>
+        <input class="w3-input w3-border" type="text" id="spemovie" name="spemovie">
+        <!-- <label for="submit">click</label> -->
+        <input class="w3-button w3-red w3-margin-top" id="get" type="submit" value="Search" formaction="/get-random-wow">
+      </form>
+    </div>
+  </div>
+  <!-- End page content -->
+</div>
+
+<div class="w3-container w3-margin-top">
+  <h3>Click on an image and watch </h3>
+  <h6>a clip of Owen Wilson saying <strong>WOW</strong></h6>
+</div>
+  <div class="d-flex poster-co"> 
+    <% if(locals.result){ %>
+      <% for(var i=0; i< result.length; i++){%>
+        <% movie_link = "/single-movie/" + result[i].movie%>
+        <a href="<%= movie_link%>"><img class="owen-pics" src="<%= result[i].poster%>" alt="Owen"></a> 
+     <%}%>
+    <%}%>
+  </div>
+
+
+
+
+
+
+<%- include("partials/footer.ejs") %>

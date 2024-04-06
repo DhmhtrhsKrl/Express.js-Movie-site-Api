@@ -1,0 +1,19 @@
+.w3-input{
+ margin-top: 10px;
+}
+.owen-pics{
+    height: 300px;
+    object-fit: contain;
+}
+.poster-co{
+    justify-content: center;
+    margin-right: 40px;
+    margin-left: 40px;
+}
+.text-owen{
+    text-align: center;
+}
+.lin-wow{
+    color: white;
+    background-color: #f44336;
+}
